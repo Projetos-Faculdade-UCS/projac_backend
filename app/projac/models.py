@@ -6,7 +6,7 @@ class Area(models.Model):
     """
     nome = models.CharField(max_length=255, null=False)
 
-    def str(self):
+    def __str__(self):
         return self.nome
 
 class SubArea(models.Model):
@@ -20,5 +20,5 @@ class SubArea(models.Model):
         related_name='subarea_set'
     )
 
-    def str(self):
+    def __str__(self):
         return self.nome

@@ -1,3 +1,24 @@
 from django.db import models
 
-# Create your models here.
+class Area(models.Model):
+    """
+        Modelo de área do conhecimento
+    """
+    nome = models.CharField(max_length=255, null=False)
+
+    def str(self):
+        return self.nome
+
+class SubArea(models.Model):
+    """
+        Modelo de subárea do conhecimento
+    """
+    nome = models.CharField(max_length=255, null=False)
+    area = models.ForeignKey(
+        Area,
+        on_delete=models.CASCADE,
+        related_name='subarea_set'
+    )
+
+    def str(self):
+        return self.nome

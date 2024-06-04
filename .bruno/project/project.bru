@@ -1,0 +1,26 @@
+meta {
+  name: project
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/projetos/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "titulo": "teste1",
+      "objetivo": "teste1",
+      "descricao": "teste1",
+      "info_extras": "teste1",
+      "data_criacao": "2024-06-04",
+      "data_conclusao": "2024-06-06",
+      "valor_solicitado": 200,
+      "cancelado": false,
+      "area_id": 1,
+      "subarea_ids": [1]
+  }
+}

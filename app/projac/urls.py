@@ -1,3 +1,5 @@
+"""urls module"""
+
 from rest_framework import routers
 from django.urls import path, include
 from projac.views import ProjetoViewSet

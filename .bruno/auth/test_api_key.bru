@@ -1,0 +1,15 @@
+meta {
+  name: test_api_key
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/teste-auth
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Api-Key {{auth_api_key}}
+}

@@ -1,0 +1,32 @@
+meta {
+  name: auth_jwt
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/api/token/
+  body: formUrlEncoded
+  auth: none
+}
+
+body:json {
+  {
+    "username" : "admin",
+    "password": "adminadmin"
+  }
+}
+
+body:form-urlencoded {
+  username: {{username}}
+  password: {{password}}
+}
+
+vars:pre-request {
+  username: admin
+  password: adminadmin
+}
+
+script:post-response {
+  bru.setEnvVar("auth_jwt", res.body.access)
+}

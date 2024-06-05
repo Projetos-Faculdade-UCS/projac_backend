@@ -40,8 +40,7 @@ class Projeto(models.Model):
         through='PesquisadorProjeto',
         related_name='projeto_set',
         blank=True
-    )  
- 
+    )
 
     def __str__(self):
         return str(self.titulo)
@@ -105,15 +104,12 @@ class PesquisadorProjeto(models.Model):
         on_delete=models.CASCADE,
         related_name='pesquisadorprojeto_set'
     )
-
     projeto = models.ForeignKey(
         Projeto,
         on_delete=models.CASCADE,
         related_name='pesquisadorprojeto_set'
     )
-
     cargo = models.CharField(max_length=255, null=False)
-
     horas = models.IntegerField(null=True)
 
     def __str__(self):
@@ -133,7 +129,7 @@ class AgenciaFomento(models.Model):
     )
 
     def __str__(self):
-        return f'{self.nome} - {self.sigla}' 
+        return f'{self.nome} - {self.sigla}'
 
 
 class ValorArrecadado(models.Model):
@@ -151,7 +147,7 @@ class ValorArrecadado(models.Model):
 
     def __str__(self):
         return f'{self.valor} - {self.data} - {self.descricao}'
-    
+
 
 class ProducaoAcademica(models.Model):
     """
@@ -168,4 +164,3 @@ class ProducaoAcademica(models.Model):
 
     def __str__(self):
         return f'{self.titulo} - {self.projeto}'
-    

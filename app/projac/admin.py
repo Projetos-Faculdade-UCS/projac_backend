@@ -1,3 +1,5 @@
+'''admin module'''
+
 from django.contrib import admin
 from projac.models import Area, SubArea, Projeto,ProducaoAcademica,ValorArrecadado,AgenciaFomento
 
@@ -9,4 +11,3 @@ admin.site.register(Projeto)
 admin.site.register(ProducaoAcademica)
 admin.site.register(ValorArrecadado)
 admin.site.register(AgenciaFomento)
-

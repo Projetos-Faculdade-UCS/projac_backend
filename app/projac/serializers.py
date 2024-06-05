@@ -18,7 +18,6 @@ class ProducaoAcademicaSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = ProducaoAcademica
         exclude = ["id", "projeto"]
 
@@ -28,7 +27,6 @@ class ValorArrecadadoSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = ValorArrecadado
         exclude = ["id", "projeto"]
 
@@ -38,7 +36,6 @@ class AgenciaFomentoSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = AgenciaFomento
         exclude = ["id", "projeto"]
 
@@ -48,7 +45,6 @@ class AreaSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = Area
         exclude = ["id"]
 
@@ -60,7 +56,6 @@ class SubAreaSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = SubArea
         exclude = ["id"]
 
@@ -70,7 +65,6 @@ class PesquisadorSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = Pesquisador
         fields = "__all__"
 
@@ -86,7 +80,6 @@ class PesquisadorProjetoSerializer(serializers.ModelSerializer):
 
     class Meta:
         """Meta class"""
-
         model = PesquisadorProjeto
         fields = "__all__"
 
@@ -106,11 +99,9 @@ class ProjetoSerializer(serializers.ModelSerializer):
     producoes_academicas = ProducaoAcademicaSerializer(many=True, required=False)
     valores_arrecadados = ValorArrecadadoSerializer(many=True, required=False)
     agencias_fomento = AgenciaFomentoSerializer(many=True, read_only=True)
-  
 
     class Meta:
         """Meta class"""
-
         model = Projeto
         fields = [
             "id",

@@ -1,7 +1,46 @@
 """serializers module"""
 
-from projac.models import Area, Pesquisador, PesquisadorProjeto, Projeto, SubArea
+from projac.models import (
+    Area,
+    Pesquisador,
+    PesquisadorProjeto,
+    Projeto,
+    SubArea,
+    ProducaoAcademica,
+    ValorArrecadado,
+    AgenciaFomento,
+)
 from rest_framework import serializers
+
+
+class ProducaoAcademicaSerializer(serializers.ModelSerializer):
+    """ProducaoAcademica serializer"""
+
+    class Meta:
+        """Meta class"""
+
+        model = ProducaoAcademica
+        exclude = ["id", "projeto"]
+
+
+class ValorArrecadadoSerializer(serializers.ModelSerializer):
+    """ValorArrecadado serializer"""
+
+    class Meta:
+        """Meta class"""
+
+        model = ValorArrecadado
+        exclude = ["id", "projeto"]
+
+
+class AgenciaFomentoSerializer(serializers.ModelSerializer):
+    """AgenciaFomento serializer"""
+
+    class Meta:
+        """Meta class"""
+
+        model = AgenciaFomento
+        exclude = ["id", "projeto"]
 
 
 class AreaSerializer(serializers.ModelSerializer):
@@ -64,6 +103,10 @@ class ProjetoSerializer(serializers.ModelSerializer):
         queryset=SubArea.objects.all(), write_only=True, source="subarea", many=True
     )
     pesquisadores = PesquisadorProjetoSerializer(many=True, required=False)
+    producoes_academicas = ProducaoAcademicaSerializer(many=True, required=False)
+    valores_arrecadados = ValorArrecadadoSerializer(many=True, required=False)
+    agencias_fomento = AgenciaFomentoSerializer(many=True, read_only=True)
+  
 
     class Meta:
         """Meta class"""
@@ -83,6 +126,9 @@ class ProjetoSerializer(serializers.ModelSerializer):
             "subarea",
             "subarea_ids",
             "pesquisadores",
+            "producoes_academicas",
+            "valores_arrecadados",
+            "agencias_fomento",
         ]
 
     def create(self, validated_data):

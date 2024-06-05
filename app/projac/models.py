@@ -40,7 +40,8 @@ class Projeto(models.Model):
         through='PesquisadorProjeto',
         related_name='projeto_set',
         blank=True
-    )
+    )  
+ 
 
     def __str__(self):
         return str(self.titulo)
@@ -117,3 +118,54 @@ class PesquisadorProjeto(models.Model):
 
     def __str__(self):
         return f'{self.pesquisador} - {self.projeto}'
+
+
+class AgenciaFomento(models.Model):
+    """
+        Modelo de agência de fomento
+    """
+    nome = models.CharField(max_length=255, null=False)
+    sigla = models.CharField(max_length=10, null=False)
+    projeto = models.ForeignKey(
+        'Projeto',
+        on_delete=models.CASCADE,
+        related_name='agencias_fomento'
+    )
+
+    def __str__(self):
+        return f'{self.nome} - {self.sigla}' 
+
+
+class ValorArrecadado(models.Model):
+    """
+        Modelo de valor arrecadado
+    """
+    valor = models.DecimalField(max_digits=11, decimal_places=2)
+    descricao = models.TextField(null=False)
+    data = models.DateField(null=False)
+    projeto = models.ForeignKey(
+        'Projeto',
+        on_delete=models.CASCADE,
+        related_name='valores_arrecadados'
+    )
+
+    def __str__(self):
+        return f'{self.valor} - {self.data} - {self.descricao}'
+    
+
+class ProducaoAcademica(models.Model):
+    """
+        Modelo de produção acadêmica
+    """
+    titulo = models.CharField(max_length=255, null=False)
+    descricao = models.TextField(null=False)
+    tipo = models.CharField(max_length=255, null=False)
+    projeto = models.ForeignKey(
+        'Projeto',
+        on_delete=models.CASCADE,
+        related_name='producoes_academicas'
+    )
+
+    def __str__(self):
+        return f'{self.titulo} - {self.projeto}'
+    

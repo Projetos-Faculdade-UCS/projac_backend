@@ -16,10 +16,10 @@ class AreaSerializer(serializers.ModelSerializer):
 class SubAreaSerializer(serializers.ModelSerializer):
     """SubArea serializer"""
 
-    area = AreaSerializer()
+    cor = serializers.CharField(source="area.cor")
 
     class Meta:
         """Meta class"""
 
         model = SubArea
-        exclude = ["id"]
+        fields = ["id", "nome","cor"]

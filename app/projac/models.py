@@ -3,13 +3,6 @@
 from colorfield.fields import ColorField
 from django.db import models
 
-gender_choices = (
-    ('M', 'Masculino'),
-    ('F', 'Feminino'),
-    ('O', 'Outro'),
-    ('P', 'Prefiro não informar'),
-)
-
 
 class Projeto(models.Model):
     """
@@ -41,6 +34,37 @@ class Projeto(models.Model):
         related_name='projeto_set',
         blank=True
     )
+
+    @property
+    def status(self):
+        """
+            Retorna o status do projeto
+        """
+        if self.cancelado:
+            return 'CANCELADO'
+        if self.data_conclusao:
+            return 'CONCLUIDO'
+        return 'EM_ANDAMENTO'
+
+    @property
+    def valor_total_arrecadado(self):
+        """
+            Retorna o valor total arrecadado
+        """
+        total = 0
+        for valor in self.valores_arrecadados.all():
+            total += valor.valor
+        return total
+
+    @property
+    def coordenador(self):
+        """
+            Retorna o coordenador do projeto
+        """
+        for pesquisador_projeto in self.pesquisadores_set.all():
+            if pesquisador_projeto.cargo == 'Coordenador':
+                return pesquisador_projeto.pesquisador
+        return None
 
     def __str__(self):
         return str(self.titulo)
@@ -79,10 +103,9 @@ class Pesquisador(models.Model):
     nome = models.CharField(max_length=255, null=False)
     sobrenome = models.CharField(max_length=255, null=False)
     email = models.EmailField(null=False)
-    genero = models.CharField(max_length=1, choices=gender_choices, default='P', null=False)
-    telefone = models.CharField(max_length=15, null=False)
     data_nascimento = models.DateField(null=False)
     foto_perfil = models.CharField(max_length=255, null=True)
+    curriculo_lattes = models.CharField(max_length=255, null=True)
 
     @property
     def full_name(self):
@@ -90,6 +113,27 @@ class Pesquisador(models.Model):
             Retorna o nome completo do pesquisador
         """
         return f'{self.nome} {self.sobrenome}'
+
+    @property
+    def producoes_academicas(self):
+        """
+            Retorna as produções acadêmicas do pesquisador
+        """
+        return ProducaoAcademica.objects.filter(projeto__pesquisadores=self)
+
+    @property
+    def numero_projetos(self):
+        """
+            Retorna o número de projetos do pesquisador
+        """
+        return self.projetos_set.count()
+
+    @property
+    def numero_producoes(self):
+        """
+            Retorna o número de produções acadêmicas do pesquisador
+        """
+        return self.producoes_academicas.count()
 
     def __str__(self):
         return str(self.nome)
@@ -102,12 +146,12 @@ class PesquisadorProjeto(models.Model):
     pesquisador = models.ForeignKey(
         Pesquisador,
         on_delete=models.CASCADE,
-        related_name='pesquisadorprojeto_set'
+        related_name='projetos_set'
     )
     projeto = models.ForeignKey(
         Projeto,
         on_delete=models.CASCADE,
-        related_name='pesquisadorprojeto_set'
+        related_name='pesquisadores_set'
     )
     cargo = models.CharField(max_length=255, null=False)
     horas = models.IntegerField(null=True)

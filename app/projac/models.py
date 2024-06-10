@@ -121,6 +121,20 @@ class Pesquisador(models.Model):
         """
         return ProducaoAcademica.objects.filter(projeto__pesquisadores=self)
 
+    @property
+    def numero_projetos(self):
+        """
+            Retorna o número de projetos do pesquisador
+        """
+        return self.projetos_set.count()
+
+    @property
+    def numero_producoes(self):
+        """
+            Retorna o número de produções acadêmicas do pesquisador
+        """
+        return self.producoes_academicas.count()
+
     def __str__(self):
         return str(self.nome)
 

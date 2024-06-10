@@ -50,7 +50,15 @@ class PesquisadorListSerializer(serializers.ModelSerializer):
         """Meta class"""
 
         model = Pesquisador
-        fields = "__all__"
+        fields = [
+            "id",
+            "nome",
+            "sobrenome",
+            "email",
+            "foto_perfil",
+            "numero_projetos",
+            "numero_producoes",     
+        ]
 
 
 class PesquisadorDetailSerializer(serializers.ModelSerializer):

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework_api_key',
     'rest_framework_simplejwt',
     'colorfield',
+    'django_filters',
+    'django_property_filter',
     'projac.apps.ProjacConfig',
 ]
 

@@ -80,7 +80,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
     def get_pesquisadores(self, obj):
         """Get pesquisadores"""
         pesquisadores = []
-        for pesquisador_projeto in obj.pesquisadores_set.all():
+        for pesquisador_projeto in obj.pesquisadores.all():
             pesquisadores.append(PesquisadorListInProjectDetail(pesquisador_projeto).data)
         return pesquisadores
 

@@ -1,7 +1,7 @@
 """projeto serializers module"""
 
 from rest_framework import serializers
-from projac.models import Area, PesquisadorProjeto, Projeto, SubArea
+from projac.models import Area, PesquisadorProjeto, Projeto, SubArea, ProducaoAcademica, ValorArrecadado
 from .pesquisador import CoordenadorInProjectListSerializer
 from .producao_academica import ProducaoAcademicaSerializer
 from .valor_arrecadado import ValorArrecadadoSerializer
@@ -73,8 +73,14 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         area = validated_data.pop("area")
         subareas = validated_data.pop("subarea")
+        producoes_academicas = validated_data.pop("producoes_academicas", [])
+        valores_arrecadados = validated_data.pop("valores_arrecadados", [])
         projeto = Projeto.objects.create(area=area, **validated_data)
         projeto.subarea.set(subareas)
+        for producao_academica in producoes_academicas:
+            ProducaoAcademica.objects.create(projeto=projeto, **producao_academica)
+        for valor_arrecadado in valores_arrecadados:
+            ValorArrecadado.objects.create(projeto=projeto, **valor_arrecadado)
         return projeto
 
     def get_pesquisadores(self, obj):

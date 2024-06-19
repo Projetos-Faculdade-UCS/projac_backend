@@ -1,20 +1,23 @@
 """projeto serializers module"""
 
-from rest_framework import serializers
 from projac.models import (
+    AgenciaFomento,
     Area,
     PesquisadorProjeto,
+    ProducaoAcademica,
     Projeto,
     SubArea,
-    ProducaoAcademica,
     ValorArrecadado,
 )
-from .pesquisador import CoordenadorInProjectListSerializer
-from .producao_academica import ProducaoAcademicaSerializer
-from .valor_arrecadado import ValorArrecadadoSerializer
+from rest_framework import serializers
+
 from .agencia_fomento import AgenciaFomentoSerializer
 from .area_subarea import AreaSerializer, SubAreaSerializer
+from .pesquisador import CoordenadorInProjectListSerializer
 from .pesquisador_projeto import PesquisadorProjetoSerializer
+from .producao_academica import ProducaoAcademicaSerializer
+from .valor_arrecadado import ValorArrecadadoSerializer
+
 
 class PesquisadorListInProjectDetail(serializers.ModelSerializer):
     """Used to serialize a list of pesquisadores in a project detail"""
@@ -43,17 +46,28 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
 
     area = AreaSerializer(read_only=True)
     area_id = serializers.PrimaryKeyRelatedField(
-        queryset=Area.objects.all(), write_only=True, source="area"
+        queryset=Area.objects.all(),
+        write_only=True,
+        source="area",
     )
     subarea = SubAreaSerializer(read_only=True, many=True)
     subarea_ids = serializers.PrimaryKeyRelatedField(
-        queryset=SubArea.objects.all(), write_only=True, source="subarea", many=True
+        queryset=SubArea.objects.all(),
+        write_only=True,
+        source="subarea",
+        many=True,
     )
     producoes_academicas = ProducaoAcademicaSerializer(many=True, required=False)
     valores_arrecadados = ValorArrecadadoSerializer(many=True, required=False)
     pesquisadores = serializers.SerializerMethodField()
     pesquisador_projeto = PesquisadorProjetoSerializer(many=True, write_only=True)
     agencias_fomento = AgenciaFomentoSerializer(many=True, read_only=True)
+    agencias_fomento_ids = serializers.PrimaryKeyRelatedField(
+        queryset=AgenciaFomento.objects.all(),
+        write_only=True,
+        source="agencias_fomento",
+        many=True,
+    )
 
     class Meta:
         """Meta class"""
@@ -78,6 +92,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
             "pesquisadores",
             "pesquisador_projeto",
             "agencias_fomento",
+            "agencias_fomento_ids",
         ]
 
     def create(self, validated_data):
@@ -85,9 +100,11 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
         subareas = validated_data.pop("subarea")
         producoes_academicas = validated_data.pop("producoes_academicas", [])
         valores_arrecadados = validated_data.pop("valores_arrecadados", [])
+        agencias_fomento = validated_data.pop("agencias_fomento", [])
         pesquisadores_projeto_data = validated_data.pop("pesquisador_projeto")
         projeto = Projeto.objects.create(area=area, **validated_data)
         projeto.subarea.set(subareas)
+        projeto.agencias_fomento.set(agencias_fomento)
 
         for producao_academica in producoes_academicas:
             ProducaoAcademica.objects.create(projeto=projeto, **producao_academica)
@@ -112,7 +129,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
         """Pesquisador projeto validate"""
         coord_count = 0
         for pesquisador_projeto in value:
-            if pesquisador_projeto['cargo'] == "COORDENADOR":
+            if pesquisador_projeto["cargo"] == "COORDENADOR":
                 coord_count += 1
         if coord_count != 1:
             raise serializers.ValidationError("O projeto deve ter um coordenador")

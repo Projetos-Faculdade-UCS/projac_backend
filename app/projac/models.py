@@ -62,7 +62,7 @@ class Projeto(models.Model):
             Retorna o coordenador do projeto
         """
         for pesquisador_projeto in self.pesquisadores_set.all():
-            if pesquisador_projeto.cargo == 'Coordenador':
+            if pesquisador_projeto.cargo == 'COORDENADOR':
                 return pesquisador_projeto.pesquisador
         return None
 

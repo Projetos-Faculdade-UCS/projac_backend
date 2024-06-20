@@ -1,0 +1,214 @@
+[
+{
+    "model": "projac.area",
+    "pk": 1,
+    "fields": {
+        "nome": "Vida",
+        "cor": "#45AB46"
+    }
+},
+{
+    "model": "projac.area",
+    "pk": 2,
+    "fields": {
+        "nome": "Humanas",
+        "cor": "#FF32F8"
+    }
+},
+{
+    "model": "projac.area",
+    "pk": 3,
+    "fields": {
+        "nome": "Exatas",
+        "cor": "#2679FF"
+    }
+},
+{
+    "model": "projac.area",
+    "pk": 4,
+    "fields": {
+        "nome": "Artes",
+        "cor": "#8D60FF"
+    }
+},
+{
+    "model": "projac.area",
+    "pk": 5,
+    "fields": {
+        "nome": "Direito",
+        "cor": "#FF4848"
+    }
+},
+{
+    "model": "projac.area",
+    "pk": 6,
+    "fields": {
+        "nome": "Sociais",
+        "cor": "#3335FF"
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 1,
+    "fields": {
+        "nome": "Medicina",
+        "area": 1
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 2,
+    "fields": {
+        "nome": "Veterinária",
+        "area": 1
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 3,
+    "fields": {
+        "nome": "História",
+        "area": 2
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 4,
+    "fields": {
+        "nome": "Filosofia",
+        "area": 2
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 5,
+    "fields": {
+        "nome": "Matemática",
+        "area": 3
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 6,
+    "fields": {
+        "nome": "Engenharia da Computação",
+        "area": 3
+    }
+},
+{
+    "model": "projac.subarea",
+    "pk": 7,
+    "fields": {
+        "nome": "Desenvolvimento de Sistemas",
+        "area": 3
+    }
+},
+{
+    "model": "projac.pesquisador",
+    "pk": 1,
+    "fields": {
+        "nome": "Daniel Luis",
+        "sobrenome": "Notari",
+        "email": "dlnotari@ucs.br",
+        "data_nascimento": "2024-06-20",
+        "foto_perfil": "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4767926T3",
+        "curriculo_lattes": "http://lattes.cnpq.br/0051814460033485",
+        "full_name": "Daniel Luis Notari"
+    }
+},
+{
+    "model": "projac.pesquisador",
+    "pk": 2,
+    "fields": {
+        "nome": "Scheila",
+        "sobrenome": "de Avila e Silva",
+        "email": "sasilva6@ucs.br",
+        "data_nascimento": "2024-06-20",
+        "foto_perfil": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4702769D6",
+        "curriculo_lattes": "http://lattes.cnpq.br/7731423725040717",
+        "full_name": "Scheila de Avila e Silva"
+    }
+},
+{
+    "model": "projac.pesquisador",
+    "pk": 3,
+    "fields": {
+        "nome": "Helena",
+        "sobrenome": "Graziottin Ribeiro",
+        "email": "hgrib@ucs.br",
+        "data_nascimento": "2024-06-20",
+        "foto_perfil": "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4784556Z7",
+        "curriculo_lattes": "http://lattes.cnpq.br/7373035136785578",
+        "full_name": "Helena Graziottin Ribeiro"
+    }
+},
+{
+    "model": "projac.pesquisador",
+    "pk": 4,
+    "fields": {
+        "nome": "André",
+        "sobrenome": "Luis Martinotto",
+        "email": "almartin@ucs.br",
+        "data_nascimento": "2024-06-20",
+        "foto_perfil": "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4778129H2",
+        "curriculo_lattes": "http://lattes.cnpq.br/0695249700868677",
+        "full_name": "André Luis Martinotto"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 1,
+    "fields": {
+        "nome": "Conselho Nacional de Desenvolvimento Científico e Tecnológico",
+        "sigla": "CNPq"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 2,
+    "fields": {
+        "nome": "Fundação de Amparo à Pesquisa no Estado do Rio Grande do Sul",
+        "sigla": "FAPERGS"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 3,
+    "fields": {
+        "nome": "Financiadora de Estudos e Projetos",
+        "sigla": "FINEP"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 4,
+    "fields": {
+        "nome": "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+        "sigla": "CAPES"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 5,
+    "fields": {
+        "nome": "Agência Brasileira de Cooperação",
+        "sigla": "ABC"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 6,
+    "fields": {
+        "nome": "Fundação de Amparo à Pesquisa do Estado de São Paulo",
+        "sigla": "FAPESP"
+    }
+},
+{
+    "model": "projac.agenciafomento",
+    "pk": 7,
+    "fields": {
+        "nome": "Ministério das Relações Exteriores",
+        "sigla": "MRE"
+    }
+}
+]

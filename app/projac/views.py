@@ -1,13 +1,15 @@
 """views module"""
 
+from rest_framework import viewsets
+
 from projac.filters import (
     AgenciaFomentoFilter,
     AreaFilter,
+    PesquisadorFilter,
     ProjetoFilter,
     SubAreaFilter,
 )
 from projac.models import AgenciaFomento, Area, Pesquisador, Projeto, SubArea
-from rest_framework import viewsets
 
 from .serializers import (
     AgenciaFomentoSerializer,
@@ -37,6 +39,7 @@ class PesquisadorViewSet(viewsets.ModelViewSet):
     """Pesquisador viewset"""
 
     queryset = Pesquisador.objects.all()
+    filterset_class = PesquisadorFilter
 
     def get_serializer_class(self):
         """Get serializer class method"""

@@ -3,7 +3,8 @@
 from django.db.models import Q
 from django_filters import CharFilter, FilterSet
 from django_property_filter import PropertyCharFilter, PropertyFilterSet
-from projac.models import Area, Projeto, SubArea, AgenciaFomento
+
+from projac.models import AgenciaFomento, Area, Pesquisador, Projeto, SubArea
 
 
 class ProjetoFilter(PropertyFilterSet):
@@ -32,6 +33,26 @@ class ProjetoFilter(PropertyFilterSet):
         return Q(pesquisadores__cargo="Coordenador") & Q(
             pesquisadores__pesquisador__full_name__icontains=value
         )
+
+
+class PesquisadorFilter(FilterSet):
+    """Pesquisador filter class"""
+
+    nome = CharFilter(field_name="nome", method="search_nome")
+
+    class Meta:
+        """Meta class"""
+
+        model = Pesquisador
+        fields = [
+            "nome",
+        ]
+
+    def search_nome(self, queryset, _name, value):
+        """search_nome method"""
+        return queryset.filter(
+            full_name__icontains=value
+        ).distinct()
 
 
 class AreaFilter(FilterSet):

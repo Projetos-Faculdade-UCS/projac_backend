@@ -1,0 +1,20 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$VlNHZh3UPNf5mNgIhzmPNH$Ywqcg/IsfymMnvVYcw+QWIFDK3unbmplCChn6A/3jC8=",
+        "last_login": "2024-06-20T19:30:09.466Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@ucs.br",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-06-20T19:26:50.094Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

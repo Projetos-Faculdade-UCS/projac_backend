@@ -166,6 +166,12 @@ class AgenciaFomento(models.Model):
     def __str__(self):
         return f"{self.nome} - {self.sigla}"
 
+    @property
+    def full_name(self):
+        """
+        Retorna o nome completo da agência de fomento
+        """
+        return f"{self.nome} ({self.sigla})"
 
 class ValorArrecadado(models.Model):
     """

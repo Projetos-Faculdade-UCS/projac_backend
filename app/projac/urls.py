@@ -1,14 +1,23 @@
 """urls module"""
 
+from django.urls import include, path
+from projac.views import (
+    AgenciaFomentoViewSet,
+    AreaViewSet,
+    PesquisadorViewSet,
+    ProjetoViewSet,
+    SubAreaViewSet,
+)
 from rest_framework import routers
-from django.urls import path, include
-from projac.views import ProjetoViewSet, PesquisadorViewSet
 
 router = routers.DefaultRouter()
 router.register("projetos", ProjetoViewSet, basename="projetos")
 router.register("pesquisadores", PesquisadorViewSet, basename="pesquisadores")
+router.register("areas", AreaViewSet, basename="areas")
+router.register("subareas", SubAreaViewSet, basename="subareas")
+router.register("agencias", AgenciaFomentoViewSet, basename="agencias")
 
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]

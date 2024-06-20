@@ -13,7 +13,7 @@ class Projeto(models.Model):
     objetivo = models.TextField(null=False)
     descricao = models.TextField(null=False)
     data_criacao = models.DateField(null=False)
-    data_conclusao = models.DateField(null=True)
+    data_conclusao = models.DateField(blank=True, null=True)
     valor_solicitado = models.DecimalField(max_digits=11, decimal_places=2)
     cancelado = models.BooleanField(default=False)
     area = models.ForeignKey(
@@ -31,6 +31,11 @@ class Projeto(models.Model):
     pesquisadores = models.ManyToManyField(
         'Pesquisador',
         through='PesquisadorProjeto',
+        related_name='projeto_set',
+        blank=True
+    )
+    agencias_fomento = models.ManyToManyField(
+        'AgenciaFomento',
         related_name='projeto_set',
         blank=True
     )
@@ -62,7 +67,7 @@ class Projeto(models.Model):
             Retorna o coordenador do projeto
         """
         for pesquisador_projeto in self.pesquisadores_set.all():
-            if pesquisador_projeto.cargo == 'Coordenador':
+            if pesquisador_projeto.cargo == 'COORDENADOR':
                 return pesquisador_projeto.pesquisador
         return None
 
@@ -166,11 +171,6 @@ class AgenciaFomento(models.Model):
     """
     nome = models.CharField(max_length=255, null=False)
     sigla = models.CharField(max_length=10, null=False)
-    projeto = models.ForeignKey(
-        'Projeto',
-        on_delete=models.CASCADE,
-        related_name='agencias_fomento'
-    )
 
     def __str__(self):
         return f'{self.nome} - {self.sigla}'

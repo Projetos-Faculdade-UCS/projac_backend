@@ -1,0 +1,172 @@
+[
+{
+    "model": "projac.projeto",
+    "pk": 1,
+    "fields": {
+        "titulo": "Qualidade de Vida",
+        "objetivo": "Aumentar a Qualidade de Vida",
+        "descricao": "A qualidade de vida é um conceito amplo que abrange diversos aspectos da existência humana, incluindo saúde física e mental, bem-estar emocional, condições de trabalho, relações sociais e o ambiente em que vivemos. Para aumentar a qualidade de vida, é essencial adotar abordagens holísticas e multifacetadas que levem em consideração todos esses fatores. Estratégias eficazes podem variar de políticas públicas abrangentes a mudanças individuais no estilo de vida, todas voltadas para criar um ambiente mais saudável, equilibrado e gratificante.\r\n\r\nUm dos pilares fundamentais para melhorar a qualidade de vida é a promoção da saúde física. Isso inclui a adoção de uma dieta equilibrada, a prática regular de atividades físicas e a prevenção de doenças através de check-ups médicos periódicos. Alimentação saudável e exercícios físicos não apenas aumentam a expectativa de vida, mas também melhoram a energia e o humor diário. Políticas públicas que incentivem o acesso a alimentos saudáveis e a criação de espaços públicos para a prática de esportes são essenciais para que mais pessoas possam adotar esses hábitos benéficos.\r\n\r\nA saúde mental é outro componente crucial para uma vida de qualidade. Estresse, ansiedade e depressão são problemas comuns na sociedade moderna e podem ter um impacto negativo significativo no bem-estar geral. Estratégias para melhorar a saúde mental incluem o acesso a serviços de apoio psicológico, a promoção de práticas de mindfulness e meditação, além de um equilíbrio adequado entre vida profissional e pessoal. Empresas e governos podem colaborar criando ambientes de trabalho mais saudáveis e oferecendo suporte psicológico aos trabalhadores.\r\n\r\nAs relações sociais também desempenham um papel vital na qualidade de vida. Laços fortes com familiares, amigos e a comunidade proporcionam suporte emocional e uma rede de apoio em momentos de dificuldade. Para fortalecer esses laços, é importante cultivar a empatia, a comunicação eficaz e a participação ativa em atividades comunitárias. Políticas que incentivem a integração social e a criação de espaços de convivência comunitária podem ajudar a combater o isolamento social e a solidão, problemas cada vez mais comuns na sociedade contemporânea.\r\n\r\nFinalmente, o ambiente em que vivemos tem um impacto significativo na nossa qualidade de vida. Moradias adequadas, acesso a áreas verdes, segurança e um ambiente livre de poluição são fatores que contribuem para o bem-estar geral. Políticas urbanas que promovam o desenvolvimento sustentável, a conservação ambiental e a criação de infraestrutura que suporte um estilo de vida saudável são essenciais. Além disso, a conscientização e o envolvimento da comunidade em práticas ecológicas ajudam a criar um ambiente mais saudável para todos.\r\n\r\nEm suma, aumentar a qualidade de vida requer uma abordagem integrada que aborde aspectos físicos, mentais, sociais e ambientais da existência humana. Ao adotar práticas saudáveis, fomentar a saúde mental, fortalecer as relações sociais e criar um ambiente favorável, é possível construir uma vida mais plena e satisfatória para todos. Governos, empresas e indivíduos têm um papel crucial nesse processo, colaborando para a criação de uma sociedade mais equilibrada e saudável.",
+        "data_criacao": "2024-06-20",
+        "data_conclusao": null,
+        "valor_solicitado": "41565.12",
+        "cancelado": false,
+        "area": 1,
+        "subarea": [
+            1,
+            4
+        ],
+        "agencias_fomento": [
+            1,
+            3,
+            6
+        ]
+    }
+},
+{
+    "model": "projac.projeto",
+    "pk": 2,
+    "fields": {
+        "titulo": "Computação Quântica para Testes de Vacinas",
+        "objetivo": "Usar a força de computadores quânticos para testar vacinas",
+        "descricao": "A computação quântica está emergindo como uma das tecnologias mais promissoras do século XXI, oferecendo uma capacidade de processamento exponencialmente maior do que os computadores clássicos. Uma das áreas onde essa tecnologia pode ter um impacto revolucionário é na pesquisa e desenvolvimento de vacinas. Usar a força dos computadores quânticos para testar vacinas tem o potencial de acelerar significativamente o processo de descoberta, melhorar a eficácia das vacinas e otimizar a resposta global a surtos de doenças.\r\n\r\nOs computadores quânticos funcionam com base em princípios da mecânica quântica, utilizando qubits em vez dos bits tradicionais. Essa capacidade permite que eles processem uma quantidade imensa de dados simultaneamente, algo inviável para os computadores clássicos. Na pesquisa de vacinas, essa capacidade pode ser utilizada para simular a interação entre proteínas virais e o sistema imunológico humano em uma escala e com uma precisão nunca antes possível. Isso pode levar a uma compreensão mais profunda de como os vírus funcionam e como melhor combatê-los.\r\n\r\nA simulação de moléculas e proteínas em computadores clássicos é limitada pela complexidade computacional envolvida. Com a computação quântica, é possível realizar essas simulações de forma muito mais eficiente. Isso significa que cientistas podem testar uma vasta quantidade de variações de proteínas virais e de respostas imunológicas de forma rápida, identificando as combinações mais promissoras para o desenvolvimento de vacinas. Além disso, a computação quântica pode ajudar a prever mutações virais, permitindo a criação de vacinas mais robustas e de longo prazo.\r\n\r\nOutra vantagem significativa da computação quântica na pesquisa de vacinas é a capacidade de otimizar processos complexos. A criação de uma vacina envolve diversas etapas, desde a identificação de antígenos até os testes clínicos. Com a ajuda de algoritmos quânticos, é possível otimizar cada uma dessas etapas, reduzindo custos e tempo. Por exemplo, no estágio de testes clínicos, a computação quântica pode ser usada para analisar grandes volumes de dados de maneira mais eficiente, identificando padrões e resultados mais rapidamente.\r\n\r\nAlém disso, a colaboração entre cientistas e a partilha de dados pode ser facilitada pela computação quântica. Com a capacidade de processar e analisar dados de múltiplas fontes em tempo real, os pesquisadores podem trabalhar de forma mais integrada e eficaz. Isso é particularmente importante em situações de emergência, como pandemias, onde a rapidez na resposta pode salvar inúmeras vidas. A computação quântica pode, portanto, transformar a forma como abordamos a pesquisa e o desenvolvimento de vacinas, tornando o processo mais ágil e preciso.\r\n\r\nEm conclusão, a utilização da força dos computadores quânticos para testar vacinas representa uma fronteira emocionante e promissora na biomedicina. Essa tecnologia tem o potencial de revolucionar a pesquisa de vacinas, permitindo descobertas mais rápidas e eficazes, além de otimizar processos complexos. À medida que a computação quântica continua a evoluir, podemos esperar avanços significativos na nossa capacidade de combater doenças infecciosas, melhorando a saúde global e salvando vidas.",
+        "data_criacao": "2024-06-20",
+        "data_conclusao": null,
+        "valor_solicitado": "4218764.54",
+        "cancelado": false,
+        "area": 3,
+        "subarea": [
+            1,
+            2,
+            6,
+            7
+        ],
+        "agencias_fomento": [
+            1,
+            3,
+            7
+        ]
+    }
+},
+{
+    "model": "projac.projeto",
+    "pk": 3,
+    "fields": {
+        "titulo": "Povos Nórdicos",
+        "objetivo": "Como viveram os povos nórdicos",
+        "descricao": "Os povos nórdicos, também conhecidos como vikings, foram uma civilização fascinante que prosperou no norte da Europa, principalmente nas regiões que hoje compreendem a Noruega, Suécia e Dinamarca, entre os séculos VIII e XI. Conhecidos tanto por suas habilidades como navegadores e guerreiros quanto por suas contribuições culturais e comerciais, esses povos deixaram um legado duradouro na história europeia. Suas vidas eram moldadas pelo ambiente rigoroso e as oportunidades oferecidas pelo mar.\r\n\r\nA sociedade nórdica era estruturada em torno de aldeias e fazendas, com uma economia predominantemente agrícola. As longas noites de inverno e os verões curtos e intensos exigiam uma preparação cuidadosa e uma adaptação constante ao clima adverso. A agricultura incluía o cultivo de cereais, como cevada e centeio, e a criação de animais, como gado, ovelhas e porcos. Além disso, a pesca e a caça complementavam a dieta, fornecendo peixes e carne de animais selvagens. A produção de alimentos era vital para a sobrevivência e desempenhava um papel central na vida cotidiana dos nórdicos.\r\n\r\nA habilidade marítima dos povos nórdicos é uma das suas características mais destacadas. Eles construíram navios avançados para a época, conhecidos como drakkars ou longships, que eram rápidos, flexíveis e capazes de navegar tanto em alto-mar quanto em rios rasos. Essas embarcações permitiram que os nórdicos explorassem, comerciassem e saqueassem terras distantes, chegando até a América do Norte, através de Leif Erikson, séculos antes de Cristóvão Colombo. O comércio era uma atividade importante, com rotas que se estendiam até o Oriente Médio e a Ásia, trazendo riqueza e influências culturais variadas para a Escandinávia.\r\n\r\nA vida social e cultural dos povos nórdicos era rica e complexa. Eles seguiam uma religião politeísta, com deuses como Odin, Thor e Freyja desempenhando papéis centrais em suas crenças e rituais. Os vikings também possuíam uma tradição oral forte, com sagas e epopeias que contavam as histórias de seus heróis, mitos e lendas. A arte e a metalurgia eram altamente desenvolvidas, refletindo-se em intricados trabalhos em madeira, metal e pedras. Além disso, a sociedade nórdica valorizava a lei e a ordem, com sistemas de governança que incluíam assembleias comunitárias conhecidas como \"things,\" onde disputas eram resolvidas e decisões importantes eram tomadas.\r\n\r\nA influência dos povos nórdicos se estendeu além de suas conquistas militares e marítimas. Eles deixaram um impacto duradouro nas regiões que colonizaram e com as quais comerciaram, contribuindo para a formação de novas culturas e sociedades. A colonização das Ilhas Britânicas, da Islândia, da Groenlândia e de partes da Rússia teve efeitos significativos na demografia, na cultura e na língua dessas regiões. A herança viking é visível até hoje, não apenas em achados arqueológicos, mas também nas tradições, na toponímia e nas sagas que continuam a fascinar pessoas ao redor do mundo.\r\n\r\nEm resumo, os povos nórdicos viviam uma vida marcada pela dureza do ambiente natural e pela riqueza de suas tradições culturais. Como agricultores, guerreiros, navegadores e comerciantes, eles desempenharam um papel crucial na história europeia. Sua capacidade de adaptação, suas habilidades marítimas e seu legado cultural continuam a influenciar e inspirar o mundo moderno, oferecendo uma visão única de uma das civilizações mais intrigantes da história.",
+        "data_criacao": "2024-06-20",
+        "data_conclusao": "2024-06-20",
+        "valor_solicitado": "150.00",
+        "cancelado": false,
+        "area": 2,
+        "subarea": [
+            3,
+            4
+        ],
+        "agencias_fomento": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "projac.valorarrecadado",
+    "pk": 1,
+    "fields": {
+        "valor": "200000.00",
+        "descricao": "AstraZeneca financiou a pesquisa",
+        "data": "2024-06-20",
+        "projeto": 2
+    }
+},
+{
+    "model": "projac.valorarrecadado",
+    "pk": 2,
+    "fields": {
+        "valor": "5000000.00",
+        "descricao": "Elon Musk tá doido",
+        "data": "2024-06-20",
+        "projeto": 2
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 1,
+    "fields": {
+        "pesquisador": 1,
+        "projeto": 2,
+        "cargo": "Coordenador",
+        "horas": 500
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 2,
+    "fields": {
+        "pesquisador": 2,
+        "projeto": 2,
+        "cargo": "Pesquisador",
+        "horas": 100
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 3,
+    "fields": {
+        "pesquisador": 4,
+        "projeto": 2,
+        "cargo": "Pesquisador",
+        "horas": 250
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 4,
+    "fields": {
+        "pesquisador": 3,
+        "projeto": 1,
+        "cargo": "Coordenador",
+        "horas": 12
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 5,
+    "fields": {
+        "pesquisador": 4,
+        "projeto": 1,
+        "cargo": "Outro",
+        "horas": 1
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 6,
+    "fields": {
+        "pesquisador": 2,
+        "projeto": 3,
+        "cargo": "Coordenador",
+        "horas": 50
+    }
+},
+{
+    "model": "projac.pesquisadorprojeto",
+    "pk": 7,
+    "fields": {
+        "pesquisador": 1,
+        "projeto": 3,
+        "cargo": "Pesquisador",
+        "horas": 2
+    }
+},
+{
+    "model": "projac.producaoacademica",
+    "pk": 1,
+    "fields": {
+        "titulo": "Computação Quântica",
+        "descricao": "Como funciona a computação quântica no mundo do software",
+        "tipo": "Livro",
+        "projeto": 2
+    }
+}
+]

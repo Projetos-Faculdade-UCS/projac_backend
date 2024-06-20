@@ -143,6 +143,11 @@ SIMPLE_JWT = {
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False,
 
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        # ...
+    ),
+
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],

@@ -38,6 +38,7 @@ class ProjectListInPesquisadorDetail(serializers.ModelSerializer):
             "data_criacao",
             "status",
             "horas",
+            'cargo',
             "area",
             "coordenador",
         ]
@@ -64,7 +65,7 @@ class PesquisadorListSerializer(serializers.ModelSerializer):
 class PesquisadorDetailSerializer(serializers.ModelSerializer):
     """Used to serialize a detail of an pesquisador"""
 
-    projetos = ProjectListInPesquisadorDetail(source="projetos_set", many=True)
+    projetos = ProjectListInPesquisadorDetail(many=True)
     producoes_academicas = ProducaoAcademicaSerializer(many=True)
 
     class Meta:

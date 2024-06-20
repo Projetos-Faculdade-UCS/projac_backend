@@ -63,7 +63,7 @@ class Projeto(models.Model):
         Retorna o coordenador do projeto
         """
         for pesquisador_projeto in self.pesquisadores.all():
-            if pesquisador_projeto.cargo == "COORDENADOR":
+            if pesquisador_projeto.cargo.upper() == "COORDENADOR":
                 return pesquisador_projeto.pesquisador
         return None
 
@@ -117,14 +117,14 @@ class Pesquisador(models.Model):
         """
         Retorna as produções acadêmicas do pesquisador
         """
-        return ProducaoAcademica.objects.filter(projeto__pesquisadores=self)
+        return ProducaoAcademica.objects.filter(projeto__pesquisadores__pesquisador=self)
 
     @property
     def numero_projetos(self):
         """
         Retorna o número de projetos do pesquisador
         """
-        return self.projetos_set.count()
+        return self.projetos.count()
 
     @property
     def numero_producoes(self):

@@ -50,7 +50,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
         write_only=True,
         source="area",
     )
-    subarea = SubAreaSerializer(read_only=True, many=True)
+    subareas = SubAreaSerializer(source="subarea", read_only=True, many=True)
     subarea_ids = serializers.PrimaryKeyRelatedField(
         queryset=SubArea.objects.all(),
         write_only=True,
@@ -83,7 +83,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
             "status",
             "area",
             "area_id",
-            "subarea",
+            "subareas",
             "subarea_ids",
             "producoes_academicas",
             "valor_solicitado",

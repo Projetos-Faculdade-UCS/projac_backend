@@ -10,4 +10,4 @@ class AgenciaFomentoSerializer(serializers.ModelSerializer):
         """Meta class"""
 
         model = AgenciaFomento
-        exclude = ["id", "projeto"]
+        exclude = ["id"]

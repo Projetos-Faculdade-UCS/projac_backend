@@ -1,6 +1,7 @@
 """views module"""
 
 from rest_framework import viewsets
+from rest_framework_api_key.permissions import HasAPIKey
 
 from projac.filters import (
     AgenciaFomentoFilter,
@@ -36,6 +37,7 @@ class ProjetoViewSet(viewsets.ModelViewSet):
 
     queryset = Projeto.objects.all()
     filterset_class = ProjetoFilter
+    permission_classes = [HasAPIKey]
 
     def get_serializer_class(self):
         """Get serializer class method"""
@@ -49,6 +51,7 @@ class PesquisadorViewSet(viewsets.ModelViewSet):
 
     queryset = Pesquisador.objects.all()
     filterset_class = PesquisadorFilter
+    permission_classes = [HasAPIKey]
 
     def get_serializer_class(self):
         """Get serializer class method"""
@@ -63,6 +66,7 @@ class AreaViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Area.objects.all()
     serializer_class = AreaSerializer
     filterset_class = AreaFilter
+    permission_classes = [HasAPIKey]
 
 
 class SubAreaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -71,6 +75,7 @@ class SubAreaViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = SubArea.objects.all()
     serializer_class = SubAreaSerializer
     filterset_class = SubAreaFilter
+    permission_classes = [HasAPIKey]
 
 
 class AgenciaFomentoViewSet(viewsets.ReadOnlyModelViewSet):
@@ -79,6 +84,7 @@ class AgenciaFomentoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = AgenciaFomento.objects.all()
     serializer_class = AgenciaFomentoSerializer
     filterset_class = AgenciaFomentoFilter
+    permission_classes = [HasAPIKey]
 
 
 class ProducaoAcademicaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -87,3 +93,4 @@ class ProducaoAcademicaViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = ProducaoAcademica.objects.all()
     serializer_class = ProducaoAcademicaSerializer
     filterset_class = ProducaoAcademicaFilter
+    permission_classes = [HasAPIKey]

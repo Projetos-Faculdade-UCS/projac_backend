@@ -26,6 +26,7 @@ class ProjetoFilter(PropertyFilterSet):
 
         model = Projeto
         fields = [
+            "q",
             "area",
             "status",
         ]
@@ -45,17 +46,17 @@ class ProjetoFilter(PropertyFilterSet):
 class PesquisadorFilter(FilterSet):
     """Pesquisador filter class"""
 
-    nome = CharFilter(field_name="nome", method="search_nome")
+    q = CharFilter(field_name="q", method="search_q")
 
     class Meta:
         """Meta class"""
 
         model = Pesquisador
         fields = [
-            "nome",
+            "q",
         ]
 
-    def search_nome(self, queryset, _name, value):
+    def search_q(self, queryset, _name, value):
         """search_nome method"""
         return queryset.filter(full_name__icontains=value).distinct()
 
@@ -63,28 +64,28 @@ class PesquisadorFilter(FilterSet):
 class AreaFilter(FilterSet):
     """Area filter class"""
 
-    nome = CharFilter(field_name="nome", lookup_expr="icontains")
+    q = CharFilter(field_name="nome", lookup_expr="icontains")
 
     class Meta:
         """Meta class"""
 
         model = Area
         fields = [
-            "nome",
+            "q",
         ]
 
 
 class SubAreaFilter(FilterSet):
     """SubArea filter class"""
 
-    nome = CharFilter(field_name="nome", lookup_expr="icontains")
+    q = CharFilter(field_name="nome", lookup_expr="icontains")
 
     class Meta:
         """Meta class"""
 
         model = SubArea
         fields = [
-            "nome",
+            "q",
         ]
 
 
@@ -105,12 +106,12 @@ class AgenciaFomentoFilter(PropertyFilterSet):
 class ProducaoAcademicaFilter(FilterSet):
     """ProducaoAcademica filter class"""
 
-    titulo = CharFilter(field_name="titulo", lookup_expr="icontains")
+    q = CharFilter(field_name="titulo", lookup_expr="icontains")
 
     class Meta:
         """Meta class"""
 
         model = ProducaoAcademica
         fields = [
-            "titulo",
+            "q",
         ]

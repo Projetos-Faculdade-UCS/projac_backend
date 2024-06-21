@@ -1,11 +1,15 @@
 meta {
-  name: projects
+  name: all-projetos
   type: http
-  seq: 2
+  seq: 1
 }
 
 get {
   url: http://localhost:8000/projetos/
   body: none
   auth: none
+}
+
+headers {
+  Authorization: Api-key {{auth_api_key}}
 }

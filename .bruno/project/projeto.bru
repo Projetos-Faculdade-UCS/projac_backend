@@ -1,0 +1,15 @@
+meta {
+  name: projeto
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:8000/projetos/{{prod_id}}/
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Api-key {{auth_api_key}}
+}

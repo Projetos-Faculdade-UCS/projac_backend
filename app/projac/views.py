@@ -6,16 +6,25 @@ from projac.filters import (
     AgenciaFomentoFilter,
     AreaFilter,
     PesquisadorFilter,
+    ProducaoAcademicaFilter,
     ProjetoFilter,
     SubAreaFilter,
 )
-from projac.models import AgenciaFomento, Area, Pesquisador, Projeto, SubArea
+from projac.models import (
+    AgenciaFomento,
+    Area,
+    Pesquisador,
+    ProducaoAcademica,
+    Projeto,
+    SubArea,
+)
 
 from .serializers import (
     AgenciaFomentoSerializer,
     AreaSerializer,
     PesquisadorDetailSerializer,
     PesquisadorListSerializer,
+    ProducaoAcademicaSerializer,
     ProjetoDetailSerializer,
     ProjetoListSerializer,
     SubAreaSerializer,
@@ -70,3 +79,11 @@ class AgenciaFomentoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = AgenciaFomento.objects.all()
     serializer_class = AgenciaFomentoSerializer
     filterset_class = AgenciaFomentoFilter
+
+
+class ProducaoAcademicaViewSet(viewsets.ReadOnlyModelViewSet):
+    """ProducoesAcademicas viewset"""
+
+    queryset = ProducaoAcademica.objects.all()
+    serializer_class = ProducaoAcademicaSerializer
+    filterset_class = ProducaoAcademicaFilter

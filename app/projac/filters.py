@@ -4,7 +4,14 @@ from django.db.models import Q
 from django_filters import CharFilter, FilterSet
 from django_property_filter import PropertyCharFilter, PropertyFilterSet
 
-from projac.models import AgenciaFomento, Area, Pesquisador, Projeto, SubArea
+from projac.models import (
+    AgenciaFomento,
+    Area,
+    Pesquisador,
+    ProducaoAcademica,
+    Projeto,
+    SubArea,
+)
 
 
 class ProjetoFilter(PropertyFilterSet):
@@ -50,9 +57,7 @@ class PesquisadorFilter(FilterSet):
 
     def search_nome(self, queryset, _name, value):
         """search_nome method"""
-        return queryset.filter(
-            full_name__icontains=value
-        ).distinct()
+        return queryset.filter(full_name__icontains=value).distinct()
 
 
 class AreaFilter(FilterSet):
@@ -94,4 +99,18 @@ class AgenciaFomentoFilter(PropertyFilterSet):
         model = AgenciaFomento
         fields = [
             "q",
+        ]
+
+
+class ProducaoAcademicaFilter(FilterSet):
+    """ProducaoAcademica filter class"""
+
+    titulo = CharFilter(field_name="titulo", lookup_expr="icontains")
+
+    class Meta:
+        """Meta class"""
+
+        model = ProducaoAcademica
+        fields = [
+            "titulo",
         ]

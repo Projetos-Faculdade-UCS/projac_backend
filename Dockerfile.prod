@@ -35,6 +35,4 @@ EXPOSE 8000
 
 WORKDIR /app
 
-ENV PASSWORD secret
-
 ENTRYPOINT ["./entrypoint.sh"]

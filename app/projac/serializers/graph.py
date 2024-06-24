@@ -8,6 +8,7 @@ class GraphSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pesquisador
         fields = [
+            "id",
             "nome",
             "sobrenome",
             "foto_perfil",

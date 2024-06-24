@@ -29,6 +29,7 @@ from .serializers import (
     ProjetoDetailSerializer,
     ProjetoListSerializer,
     SubAreaSerializer,
+    GraphSerializer,
 )
 
 
@@ -94,3 +95,14 @@ class ProducaoAcademicaViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProducaoAcademicaSerializer
     filterset_class = ProducaoAcademicaFilter
     permission_classes = [HasAPIKey]
+
+class GraphViewSet(viewsets.ReadOnlyModelViewSet):
+    """Graph viewset"""
+
+    queryset = Pesquisador.objects.all()
+    serializer_class = GraphSerializer
+    permission_classes = []
+
+    def get_queryset(self):
+        """Get queryset method"""
+        return Pesquisador.objects.prefetch_related("projetos").all()

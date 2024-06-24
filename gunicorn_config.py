@@ -1,12 +1,10 @@
 # gunicorn_config.py
 
-import multiprocessing
-
 # Bind to 0.0.0.0:8000 to listen for requests on all available IP addresses
 bind = "0.0.0.0:8000"
 
 # Use a number of worker processes equal to the number of CPUs available
-workers = multiprocessing.cpu_count() * 2 + 1
+workers = 2
 
 # Specify the WSGI application object (adjust "app" to your project name)
 wsgi_app = "config.wsgi:application"

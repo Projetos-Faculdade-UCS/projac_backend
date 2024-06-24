@@ -4,6 +4,7 @@ from colorfield.fields import ColorField
 from django.db import models
 from django.db.models import fields
 from django.db.models.functions import Concat
+from .utils import get_lattes_photo_url
 
 
 class Projeto(models.Model):
@@ -104,7 +105,7 @@ class Pesquisador(models.Model):
     sobrenome = models.CharField(max_length=255, null=False)
     email = models.EmailField(null=False)
     data_nascimento = models.DateField(null=False)
-    foto_perfil = models.CharField(max_length=255, null=True)
+    foto_perfil = models.CharField(max_length=255, null=True, blank=True)
     curriculo_lattes = models.CharField(max_length=255, null=True)
     full_name = fields.generated.GeneratedField(
         expression=Concat("nome", models.Value(" "), "sobrenome"),
@@ -132,6 +133,14 @@ class Pesquisador(models.Model):
         Retorna o número de produções acadêmicas do pesquisador
         """
         return self.producoes_academicas.count()
+
+    def save(self, *args, **kwargs):
+        """
+        Salva o pesquisador
+        """
+        if self.curriculo_lattes:
+            self.foto_perfil = get_lattes_photo_url(self.curriculo_lattes)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return str(self.nome)
@@ -166,6 +175,12 @@ class AgenciaFomento(models.Model):
     def __str__(self):
         return f"{self.nome} - {self.sigla}"
 
+    @property
+    def full_name(self):
+        """
+        Retorna o nome completo da agência de fomento
+        """
+        return f"{self.nome} ({self.sigla})"
 
 class ValorArrecadado(models.Model):
     """

@@ -10,7 +10,7 @@ class AreaSerializer(serializers.ModelSerializer):
         """Meta class"""
 
         model = Area
-        exclude = ["id"]
+        fields = ["id", "nome", "cor"]
 
 
 class SubAreaSerializer(serializers.ModelSerializer):

@@ -1,0 +1,26 @@
+[
+{
+    "model": "rest_framework_api_key.apikey",
+    "pk": "7imiHT2N.sha512$$bd833c6c59aacccbe2092d05cab645262768363154bf5e069ec8739f745591fcdfcbf9d7b3ffdf1767e327d52b9a34d5fe488dc953cf4f9a2d3486826950461b",
+    "fields": {
+        "prefix": "7imiHT2N",
+        "hashed_key": "sha512$$bd833c6c59aacccbe2092d05cab645262768363154bf5e069ec8739f745591fcdfcbf9d7b3ffdf1767e327d52b9a34d5fe488dc953cf4f9a2d3486826950461b",
+        "created": "2024-06-20T20:14:47.928Z",
+        "name": "Web",
+        "revoked": false,
+        "expiry_date": "2025-06-20T20:14:43Z"
+    }
+},
+{
+    "model": "rest_framework_api_key.apikey",
+    "pk": "ZoUZtq2C.sha512$$076039fcc63a7de983fc1e8bf495232f1e4295d3a402d8ebce49d4e1d810bcf56abaa8f59ab0987bfc3bac16e938c62b2a010dc478e2fcaa6e4c57f288dd27c5",
+    "fields": {
+        "prefix": "ZoUZtq2C",
+        "hashed_key": "sha512$$076039fcc63a7de983fc1e8bf495232f1e4295d3a402d8ebce49d4e1d810bcf56abaa8f59ab0987bfc3bac16e938c62b2a010dc478e2fcaa6e4c57f288dd27c5",
+        "created": "2024-06-20T20:13:57.635Z",
+        "name": "Mobile",
+        "revoked": false,
+        "expiry_date": "2025-06-20T20:13:54Z"
+    }
+}
+]

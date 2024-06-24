@@ -1,7 +1,7 @@
 meta {
   name: project
   type: http
-  seq: 1
+  seq: 2
 }
 
 post {
@@ -10,11 +10,15 @@ post {
   auth: none
 }
 
+headers {
+  Authorization: Api-key {{auth_api_key}}
+}
+
 body:json {
   {
-      "titulo": "testeeee",
-      "objetivo": "testeeee",
-      "descricao": "testeeee",
+      "titulo": "teste",
+      "objetivo": "teste",
+      "descricao": "teste",
       "dataCriacao": "2024-06-04",
       "dataConclusao": null,
       "valorSolicitado": 200,
@@ -51,4 +55,8 @@ body:json {
         }
       ]
   }
+}
+
+script:post-response {
+  bru.setEnvVar('prod_id', res.body.id)
 }

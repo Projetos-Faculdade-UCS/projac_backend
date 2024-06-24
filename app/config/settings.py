@@ -171,5 +171,5 @@ REST_FRAMEWORK = {
 
 CSRF_TRUSTED_ORIGINS = [
     'localhost:8000',
-    'projac-backend-nsrbuokksa-rj.a.run.app'
+    'https://projac-backend-nsrbuokksa-rj.a.run.app'
 ]

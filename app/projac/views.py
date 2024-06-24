@@ -101,7 +101,7 @@ class GraphViewSet(viewsets.ReadOnlyModelViewSet):
 
     queryset = Pesquisador.objects.all()
     serializer_class = GraphSerializer
-    permission_classes = []
+    permission_classes = [HasAPIKey]
 
     def get_queryset(self):
         """Get queryset method"""

@@ -10,6 +10,7 @@ from projac.views import (
     ProducaoAcademicaViewSet,
     ProjetoViewSet,
     SubAreaViewSet,
+    GraphViewSet,
 )
 
 router = routers.DefaultRouter()
@@ -21,6 +22,7 @@ router.register("agencias-fomento", AgenciaFomentoViewSet, basename="agencias-fo
 router.register(
     "producoes-academicas", ProducaoAcademicaViewSet, basename="producoes-academicas"
 )
+router.register("graph", GraphViewSet, basename="graph")
 
 
 urlpatterns = [

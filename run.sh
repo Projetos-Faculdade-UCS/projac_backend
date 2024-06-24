@@ -13,6 +13,6 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Run the Docker container with the specified image tag
-docker run -it -p 8000:8000 $IMAGE_TAG
+docker run -it -p 8000:8000 -v ./app:/app $IMAGE_TAG /bin/bash
 
 echo "Docker container running using image $IMAGE_TAG"

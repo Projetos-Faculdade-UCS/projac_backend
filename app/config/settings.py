@@ -144,12 +144,13 @@ SIMPLE_JWT = {
 
 REST_FRAMEWORK = {
     "DATE_FORMAT": "%d/%m/%Y",
-
     "COERCE_DECIMAL_TO_STRING": False,
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     # Authentication
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
     ],
     # Authorization
     "DEFAULT_PERMISSION_CLASSES": [

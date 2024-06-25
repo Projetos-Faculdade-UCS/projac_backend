@@ -14,7 +14,7 @@ class Projeto(models.Model):
 
     titulo = models.CharField(max_length=255, null=False)
     objetivo = models.TextField(null=False)
-    descricao = models.TextField(null=False)
+    descricao = models.TextField(null=True, blank=True)
     data_criacao = models.DateField(null=False)
     data_conclusao = models.DateField(blank=True, null=True)
     valor_solicitado = models.DecimalField(max_digits=11, decimal_places=2)

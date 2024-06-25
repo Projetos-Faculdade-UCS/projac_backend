@@ -129,7 +129,7 @@ class ProjetoDetailSerializer(serializers.ModelSerializer):
         """Pesquisador projeto validate"""
         coord_count = 0
         for pesquisador_projeto in value:
-            if pesquisador_projeto["cargo"] == "COORDENADOR":
+            if pesquisador_projeto["cargo"].upper() == "COORDENADOR":
                 coord_count += 1
         if coord_count != 1:
             raise serializers.ValidationError("O projeto deve ter um coordenador")

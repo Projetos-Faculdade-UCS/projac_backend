@@ -142,6 +142,8 @@ SIMPLE_JWT = {
 }
 
 REST_FRAMEWORK = {
+    "DATE_FORMAT": "%d/%m/%Y",
+
     'COERCE_DECIMAL_TO_STRING': False,
 
     'DEFAULT_FILTER_BACKENDS': (
